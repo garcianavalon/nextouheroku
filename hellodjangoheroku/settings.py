@@ -36,6 +36,14 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', #requiered by userena
+    'activitynetwork',
+    'userena',
+    'guardian',
+    'easy_thumbnails',
+    'accounts',#this is the app for the user profiles using userena
+    'bootstrap3_datetime',
+    'userena.contrib.umessages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -46,10 +54,39 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+#from accounts app models!
+AUTH_PROFILE_MODULE = 'accounts.VolunteerProfile'
+#django-guardian supports anonymous users object permissions
+ANONYMOUS_USER_ID = -1
+
+#USERENA settings
+LOGIN_REDIRECT_URL = ''
+LOGIN_URL = '/accounts/signin/'
+LOGOUT_URL = '/accounts/signout/'
+USERENA_REDIRECT_ON_SIGNOUT = '/'
+USERENA_SIGNIN_REDIRECT_URL = '/'
+USERENA_ACTIVATION_REQUIRED = False
+USERENA_DEFAULT_PRIVACY = 'open'
+USERENA_SIGNIN_AFTER_SIGNUP = True
+#SITE_ID
+SITE_ID = 1
+#EMAIL sending
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+#from email_settings import *
 
 ROOT_URLCONF = 'hellodjangoheroku.urls'
 
 WSGI_APPLICATION = 'hellodjangoheroku.wsgi.application'
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.request',
+)
 
 
 # Database
