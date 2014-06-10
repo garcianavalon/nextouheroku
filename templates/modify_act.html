@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>create_act |NexToU</title>
+	<link rel="shortcut icon" href="pic/NTU.jpg" type="image/png">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS for the '4 Col Portfolio' Template -->
+    <link href="css/4-col-portfolio.css" rel="stylesheet">
+	
+	<script>
+		var item = 1;
+		function AddItem(){
+			item++;
+			div = document.getElementById('items');
+			reference = document.getElementById('addnew');
+			TD = document.createElement('td');
+			TD.innerHTML = '<p><input type="text" name="qty_1" placeholder="date:y/m/d"/> <input type="text" name="qty_2" placeholder="event"/></p>';
+			TR = document.createElement('tr');
+			TR.appendChild(TD);
+			div.insertBefore(TR, reference);
+		}
+		function fetchElement(f){
+			var para = '';
+			for(var i=0;i<f.elements.length;i++)
+			para += f.elements.name+'='+f.elements.value+'&'
+			alert(para.substr(0, para.length -1));
+			return false;
+		}
+	</script>
+	<style>
+		#search {
+		width: 202px;
+		height: 32px;
+		margin: 1% 0 0 30%;
+		float: left;
+		background: url(http://lh4.ggpht.com/_HjB26hkIEK8/S4ef8dinkyI/AAAAAAAAKMs/GJwru6v7zk4/Search%20012.png) no-repeat;
+		}
+		#s {
+		width: 160px;
+		margin: 7px 0 0 4px;
+		float: left;
+		border: none;
+		background: none;
+		color: #000000;
+		font-family: Arial;
+		}
+		#r {
+		width: 25px;
+		height: 25px;
+		margin: 3px 2px 0 0;
+		float: right;
+		cursor: pointer;
+		border: none;
+		background: none;
+		}
+	</style>	
+</head>
+
+<body>
+	<a href="landing.html">
+			<img src="pic/LOGO.png" width=20% style="float:left" hspace="20" vspace="10"></img>
+	</a>
+	
+	<form action='http://www.google.com/search' target="_blank" id='search' method='get'>
+		<input type="hidden" name="sitesearch" value="網址" />
+		<input id="s" name="q" type="text" title="輸入搜尋文字" value="" />
+		<input id="r" type="submit" title="搜尋" value="" />
+	</form>
+
+
+	<div align="left">
+			<br>
+			<a href="create_act.html">
+				<img src="pic/create.png" width=10% hspace="1%"></img>
+			</a>
+			<a href="info_info.html">
+				<img src="pic/info.png" width=6% hspace="1%"></img>
+			</a>
+			<a href="landing.html">
+                <img src="pic/logout.png" width=6% ></img>
+			</a>
+    </div>
+
+	<br><br>
+	<div class="container">
+	<div class="row">
+		<div class="col-xs-9 col-sm-9">
+						<div class="panel panel-default">
+								<div class="panel-heading">modify your activity</div>
+								<!-- show the information of the activity that had been written by the user -->
+									<div class="panel-body">
+										<form class="form-horizontal">
+										<fieldset>
+										<div class="form-group">
+											<label for="inputName" class="col-lg-2 control-label">title</label>
+											<div class="col-lg-10">
+												<input type="text" class="form-control" id="inputName" placeholder="title">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="inputEmail" class="col-lg-2 control-label">photo</label>
+											<div class="col-lg-3">
+												<input type="file" name="upload" size="20" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="inputplace" class="col-lg-2 control-label">dates</label>
+												<div class="col-lg-10">
+												<input type="place" class="form-control" id="inputPhone" placeholder="due date or performance date.">
+												</div>
+										</div>
+										<div class="form-group">
+											<label for="textArea" class="col-lg-2 control-label">description</label>
+											<div class="col-lg-10">
+												<textarea class="form-control" rows="3" id="textArea" placeholder="briefly describe your activity."></textarea>
+											</div>
+										</div>
+										
+										<form name="form1" method="post" onsubmit="return fetchElement(document.form1);">
+											<table>
+												<tbody id="items">
+													<tr>
+														<label for="textArea" class="col-lg-2 control-label">important date </label>
+															<p>
+																<input type="text" name="qty_1" placeholder="date:y/m/d"/> <input type="text" name="qty_2" placeholder="event"/>
+															</p>
+													</tr>
+													<tr id="addnew">
+														<label for="textArea" class="col-lg-2 control-label"></label>
+														<td><input name="addnew" type="button" value="Add Item" onclick="AddItem();"/></td>
+													</tr>
+												</tbody>
+											</table>
+										</form>
+										
+										</fieldset>
+										</form>
+										<div class="form-group">
+											<div class="col-lg-10 col-lg-offset-9">
+												<a href="info_act.html">
+													<button class="btn btn-default">cancel</button>
+												</a>
+												<button type="submit" class="btn btn-primary">modify</button>
+												<!-- make the modification -->
+											</div>
+										</div>
+										
+									</div>
+						</div>
+		</div>
+	</div>
+	</div>
+	<!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Company 2013</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+{% extends 'userena/base_userena.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% block title %}
+    {% trans "Signup ｜NexToU" %}
+{% endblock %}
+{% block meta %}
+    <link href="{% static "css/signinpage.css" %}" rel="stylesheet">
+{% endblock %}
+{% block logo %}
+<div align="center" >
+  <br/><br/>
+  <img src="{% static "img/logo.jpg" %}" width=40%>
+  <br/><br/>
+</div>
+{% endblock %}
+{% block search %}
+{% endblock %}
+{% block body %}
+<form action="" method="post" class="form-signin">
+  {% csrf_token %}
+  <fieldset>
+    {{ form.non_field_errors }}
+    {% for field in form %}
+        {{ field.errors }}
+        {% comment %} Displaying checkboxes differently {% endcomment %}
+        {% if field.name == 'tos' %}
+            <p class="checkbox">
+            <label for="id_{{ field.name }}">{{ field }} {{ field.label }}</label>
+            </p>
+        {% else %}
+            <p>
+            {{ field.label_tag }}
+            {{ field }}
+            </p>
+        {% endif %}
+    {% endfor %}
+  </fieldset>
+  <input class="btn btn-warning btn btn-large btn-block" type="submit" value="{% trans "Signup" %}" />
+</form>
+{% endblock %}

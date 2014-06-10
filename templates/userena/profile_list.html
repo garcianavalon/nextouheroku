@@ -1,0 +1,72 @@
+{% extends 'userena/base_userena.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% block meta %}
+{% endblock %}
+
+
+{% block title %}
+    talents | NexToU
+{% endblock %}
+
+
+{% block body %}
+<br/>
+<br/>
+<br/>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="tabbable">
+                <ul class="nav nav-tabs">
+                    <div class="btn-group" data-toggle="buttons-radio">
+                        <a href="" data-toggle="tab" button type="button" class="btn btn-info">All</a>
+                      {% for talents in talents_list %}
+                        <a href="#taball" data-toggle="tab" button type="button" class="btn btn-info">{{ talents.name }}</a>
+                      {% endfor %}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="tab-content">
+        <div class="tab-pane active" id="taball">
+            <div class="row">
+                {% for profile in profile_list %}
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img class="mugshot" src="{{ profile.get_mugshot_url }}" alt="{% trans "Your mugshot" %}" />
+                            <div class="caption">
+
+                                <h3>{{ profile.user.get_full_name }}</h3>
+                                <p>{{profile.user.username}}</p>
+                                <p>{{ profile.intro }}</p>
+
+                                <a href="{% url 'userena_profile_detail' profile.user.username %}"class="btn btn-info" role="button">View profile</a>
+                                <a href="{% url 'userena_umessages_compose_to' profile.user.username %}" class="btn btn-warning" role="button">Connect</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; NexToU 2014</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+{% endblock %}

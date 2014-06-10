@@ -1,0 +1,43 @@
+{% extends 'userena/base_userena.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% block meta %}
+{% endblock %}
+{% block title %}
+	edit | NexToU
+{% endblock %}
+
+{% block body %}
+	<br><br>
+	<br><br>
+	<p align="center"></p>
+	<div align="left" style="margin:50px">
+		<div id="content">
+			<form action="" enctype="multipart/form-data" method="post">
+			  {% csrf_token %}
+			  <fieldset>
+			    <legend>{% trans "Edit Profile" %}</legend>
+				    {% for field in form %}
+				        <div class="form-group">
+				            {{ field.errors }}
+				            {{ field.label_tag }} {{ field }}
+				        </div>
+				    {% endfor %}
+			  </fieldset>
+			  <input type="submit" value="{% trans "Save changes" %}" />
+			</form>
+   		</div>
+    </div>
+	<!-- /.container -->
+    <div class="container">
+        <hr>
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Company 2013</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /.container -->
+{% endblock%}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Personal Info. | NexToU</title><link rel="shortcut icon" href="pic/NTU.jpg" type="image/png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script>
+		var item = 1;
+		function AddComputer(){
+			item++;
+			div = document.getElementById('computers');
+			reference = document.getElementById('addncomputer');
+			TD = document.createElement('td');
+			TD.innerHTML = '<p><input type="text" name="qty" placeholder="ex.python"/></p>';
+			TR = document.createElement('tr');
+			TR.appendChild(TD);
+			div.insertBefore(TR, reference);
+		}
+		function AddCooking(){
+			item++;
+			div = document.getElementById('cooking');
+			reference = document.getElementById('addncooking');
+			TD = document.createElement('td');
+			TD.innerHTML = '<p><input type="text" name="qty" placeholder="ex.Chinese food"/></p>';
+			TR = document.createElement('tr');
+			TR.appendChild(TD);
+			div.insertBefore(TR, reference);
+		}
+		function AddDance(){
+			item++;
+			div = document.getElementById('dance');
+			reference = document.getElementById('addndance');
+			TD = document.createElement('td');
+			TD.innerHTML = '<p><input type="text" name="qty" placeholder="ex.hiphop"/></p>';
+			TR = document.createElement('tr');
+			TR.appendChild(TD);
+			div.insertBefore(TR, reference);
+		}
+		function AddDesign(){
+			item++;
+			div = document.getElementById('design');
+			reference = document.getElementById('addndesign');
+			TD = document.createElement('td');
+			TD.innerHTML = '<p><input type="text" name="qty" placeholder="ex.Product design"/></p>';
+			TR = document.createElement('tr');
+			TR.appendChild(TD);
+			div.insertBefore(TR, reference);
+		}
+		function AddMusic(){
+			item++;
+			div = document.getElementById('music');
+			reference = document.getElementById('addnmusic');
+			TD = document.createElement('td');
+			TD.innerHTML = '<p><input type="text" name="qty" placeholder="ex.Piano"/></p>';
+			TR = document.createElement('tr');
+			TR.appendChild(TD);
+			div.insertBefore(TR, reference);
+		}
+		function AddSport(){
+			item++;
+			div = document.getElementById('sport');
+			reference = document.getElementById('addnsport');
+			TD = document.createElement('td');
+			TD.innerHTML = '<p><input type="text" name="qty" placeholder="ex.Basket ball"/></p>';
+			TR = document.createElement('tr');
+			TR.appendChild(TD);
+			div.insertBefore(TR, reference);
+		}
+		function AddOther(){
+			item++;
+			div = document.getElementById('other');
+			reference = document.getElementById('addnother');
+			TD = document.createElement('td');
+			TD.innerHTML = '<p><input type="text" name="qty" placeholder="ex.Other skills"/></p>';
+			TR = document.createElement('tr');
+			TR.appendChild(TD);
+			div.insertBefore(TR, reference);
+		}
+		function fetchElement(f){
+			var para = '';
+			for(var i=0;i<f.elements.length;i++)
+			para += f.elements.name+'='+f.elements.value+'&'
+			alert(para.substr(0, para.length -1));
+			return false;
+		}
+	</script>
+
+</head>
+
+<body>
+	<a href="landing.html">
+			<img src="pic/LOGO.png" width=20% style="float:left" hspace="20" vspace="10"></img>
+	</a>
+	<form action='http://www.google.com/search' target="_blank" id='search' method='get'>
+		<input type="hidden" name="sitesearch" value="網址" />
+		<input id="s" name="q" type="text" title="輸入搜尋文字" value="" />
+		<input id="r" type="submit" title="搜尋" value="" />
+	</form>
+	<style>
+		#search {
+		width: 202px;
+		height: 32px;
+		float: left;
+		margin: 1% 0 0 30%;
+		background: url(http://lh4.ggpht.com/_HjB26hkIEK8/S4ef8dinkyI/AAAAAAAAKMs/GJwru6v7zk4/Search%20012.png) no-repeat;
+		}
+		#s {
+		width: 160px;
+		margin: 7px 0 0 4px;
+		float: left;
+		border: none;
+		background: none;
+		color: #000000;
+		font-family: Arial;
+		}
+		#r {
+		width: 25px;
+		height: 25px;
+		margin: 3px 2px 0 0;
+		float: right;
+		cursor: pointer;
+		border: none;
+		background: none;
+		}
+	</style>
+	
+	<div align="left">
+			<br>
+			<a href="create_act.html">
+				<img src="pic/create.png" width=10% hspace="1%"></img>
+			</a>
+			<a href="info_info.html">
+				<img src="pic/info.png" width=6% hspace="1%"></img>
+			</a>
+			<a href="landing.html">
+                <img src="pic/logout.png" width=6% ></img>
+			</a>
+			</a>
+			<br/>
+			<br/>
+			<br/>
+    </div>
+	<br><br>
+    <div class="container">
+        <div class="row row-offcanvas-left row-offcanvas row-offcanvas-right">
+            <div class="col-xs-0 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+                <div class="list-group">
+                    <ul class="nav" id="side-menu">
+						<li>
+                            <a href="info_info.html"><i class="fa fa-info fa-fw"></i>My Pesonal Information</a>
+                        </li>
+						<li>
+                            <a href="info_act.html"><i class="fa fa-discuss fa-fw"></i>My Activity</a>
+                        </li>
+                        <li>
+                        	<a href="info_follow.html"><i class="fa fa-follow fa-fw"></i>Following</a>
+                        </li>
+                    </ul>
+                    <!-- /#side-menu -->
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+			
+
+            <!--/span-->
+			<div class="content">
+					<div class="col-xs-10 col-sm-8">
+						<div class="panel panel-default">
+							<div class="panel-heading">＃'s personal info</div>
+								<div class="panel-body">
+									<form class="form-horizontal">
+									<fieldset>
+									<div class="form-group">
+										<label for="inputName" class="col-lg-2 control-label">Name</label>
+										<div class="col-lg-10">
+											<input type="text" class="form-control" id="inputName" placeholder="Name">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputEmail" class="col-lg-2 control-label">Account Name</label>
+										<div class="col-lg-10">
+											<input type="text" class="form-control" id="inputEmail" placeholder="Email">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputPassword" class="col-lg-2 control-label">Password</label>
+											<div class="col-lg-10">
+											<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+											</div>
+									</div>
+									<div class="form-group">
+											<label for="inputEmail" class="col-lg-2 control-label">Photo</label>
+											<div class="col-lg-3">
+												<input type="file" name="upload" size="20">
+											</div>
+										</div>
+									<div class="form-group">
+										<label for="inputphone" class="col-lg-2 control-label">Phone Number</label>
+											<div class="col-lg-10">
+											<input type="phone" class="form-control" id="inputPhone" placeholder="">
+											</div>
+									</div>
+
+									<div class="form-group">
+										<label for="textArea" class="col-lg-2 control-label">Profile</label>
+										<div class="col-lg-10">
+											<textarea class="form-control" rows="3" id="textArea"></textarea>
+											<span class="profile">Edit your profile to let others know more about you !</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputSpeciality" class="col-lg-2 control-label">Speciality</label>
+											<div class="col-lg-10">
+											<label class="checkbox"><input type="checkbox"> Computer</label>
+												<form name="form1" method="post" onsubmit="return fetchElement(document.form1);">
+												<table>
+													<tbody id="computers">
+														<tr>
+															<td>
+																<p><input type="text" name="computer" placeholder="ex.python"/></p>
+															</td>
+														</tr>
+														<tr id="addncomputer">
+															<label for="textArea" class="col-lg-2 control-label"></label>
+															<td><input name="addnew" type="button" value="Add" onclick="AddComputer();"/></td>
+														</tr>
+													</tbody>
+												</table>
+												</form>
+
+											<label class="checkbox"><input type="checkbox"> Cooking</label>
+												<form name="form2" method="post" onsubmit="return fetchElement(document.form3);">
+												<table>
+													<tbody id="cooking">
+														<tr>
+															<td>
+																<p><input type="text" name="cooking" placeholder="ex.Chinese food"/></p>
+															</td>
+														</tr>
+														<tr id="addncooking">
+															<label for="textArea" class="col-lg-2 control-label"></label>
+															<td><input name="addnew" type="button" value="Add" onclick="AddCooking();"/></td>
+														</tr>
+													</tbody>
+												</table>
+												</form>
+
+											<label class="checkbox"><input type="checkbox"> Dance</label>
+												<form name="form3" method="post" onsubmit="return fetchElement(document.form3);">
+												<table>
+													<tbody id="dance">
+														<tr>
+															<td>
+																<p><input type="text" name="dance" placeholder="ex.hiphop"/></p>
+															</td>
+														</tr>
+														<tr id="addndance">
+															<label for="textArea" class="col-lg-2 control-label"></label>
+															<td><input name="addnew" type="button" value="Add" onclick="AddDance();"/></td>
+														</tr>
+													</tbody>
+												</table>
+												</form>
+
+											<label class="checkbox"><input type="checkbox"> Design</label>
+												<form name="form4" method="post" onsubmit="return fetchElement(document.form4);">
+												<table>
+													<tbody id="design">
+														<tr>
+															<td>
+																<p><input type="text" name="design" placeholder="ex.Product design"/></p>
+															</td>
+														</tr>
+														<tr id="addndesign">
+															<label for="textArea" class="col-lg-2 control-label"></label>
+															<td><input name="addnew" type="button" value="Add" onclick="AddDesign();"/></td>
+														</tr>
+													</tbody>
+												</table>
+												</form>
+											<label class="checkbox"><input type="checkbox"> Music</label>
+											<form name="form5" method="post" onsubmit="return fetchElement(document.form5);">
+												<table>
+													<tbody id="music">
+														<tr>
+															<td>
+																<p><input type="text" name="music" placeholder="ex.Piano"/></p>
+															</td>
+														</tr>
+														<tr id="addnmusic">
+															<label for="textArea" class="col-lg-2 control-label"></label>
+															<td><input name="addnew" type="button" value="Add" onclick="AddMusic();"/></td>
+														</tr>
+													</tbody>
+												</table>
+												</form>
+											<label class="checkbox"><input type="checkbox"> Sport</label>
+											<form name="form6" method="post" onsubmit="return fetchElement(document.form6);">
+												<table>
+													<tbody id="sport">
+														<tr>
+															<td>
+																<p><input type="text" name="sport" placeholder="ex.Basket ball"/></p>
+															</td>
+														</tr>
+														<tr id="addnsport">
+															<label for="textArea" class="col-lg-2 control-label"></label>
+															<td><input name="addnew" type="button" value="Add" onclick="AddSport();"/></td>
+														</tr>
+													</tbody>
+												</table>
+												</form>
+												<table>
+													<tr>
+														<td><label class="checkbox"><input type="checkbox"> Magic&nbsp;</label><td/>
+														<td><label class="checkbox"><input type="checkbox"> Stage&nbsp;</label><td/>
+														<td><label class="checkbox"><input type="checkbox"> Video&nbsp;</label><td/>
+														<td><label class="checkbox"><input type="checkbox"> Web&nbsp;</label><td/>
+													<tr/>
+												</table>
+											<label class="checkbox"><input type="checkbox"> Others</label>
+												<form name="form7" method="post" onsubmit="return fetchElement(document.form7);">
+												<table>
+													<tbody id="other">
+														<tr>
+															<td>
+																<p><input type="text" name="other" placeholder="ex.Other skills"/></p>
+															</td>
+														</tr>
+														<tr id="addnother">
+															<label for="textArea" class="col-lg-2 control-label"></label>
+															<td><input name="addnew" type="button" value="Add" onclick="AddOther();"/></td>
+														</tr>
+													</tbody>
+												</table>
+												</form>
+											</div>
+											
+									</div>
+									<div class="form-group">
+										<div class="col-lg-10 col-lg-offset-2">
+											<button class="btn btn-default">Cancel</button>
+											<button type="submit" class="btn btn-warning">Submit</button>
+										</div>
+									</div>
+									</fieldset>
+									</form>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+            <!--/span-->
+		</div>
+        <!--/row-->
+
+        <hr>
+		</div>
+    </div>
+
+    <div class="container">
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; NexToU 2014</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.js"></script>
+    <script src="js/bootstrap-modalmanager.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+
+
+
+
+
+
+ 
+
+</body>
+
+</html>

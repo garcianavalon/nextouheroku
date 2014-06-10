@@ -1,0 +1,41 @@
+- model: activitynetwork.category
+  pk: 1
+  fields:
+    name: Concert
+    description: A concert in a closed place
+- model: activitynetwork.category
+  pk: 2
+  fields:
+    name: Street performance
+    description: Any kind of performance in the street
+- model: activitynetwork.category
+  pk: 3
+  fields:
+    name: Stage performance
+    description: Any kind of performance on stage
+- model: activitynetwork.category
+  pk: 4
+  fields:
+    name: Party
+    description: Party hardy
+
+- model: activitynetwork.need
+  pk: 1
+  fields:
+    name: Musician
+    description: Someone to play in your activity
+- model: activitynetwork.need
+  pk: 2
+  fields:
+    name: Singer
+    description: Someone to sing in your activity
+- model: activitynetwork.need
+  pk: 3
+  fields:
+    name: Dancer
+    description: Someone to dance in your activity
+- model: activitynetwork.need
+  pk: 4
+  fields:
+    name: Cooker
+    description: Someone to cook in your activity

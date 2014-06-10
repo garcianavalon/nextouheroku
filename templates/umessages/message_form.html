@@ -1,0 +1,45 @@
+
+{% extends 'userena/base_userena.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% block meta %}
+{% endblock %}
+{% block title %}
+    Compose message | NexToU
+{% endblock %}
+
+{% block body %}
+    <br><br>
+    <br><br>
+    <p align="center"></p>
+    <div align="left" style="margin:50px">
+        <div id="content">
+        <div class="row">
+            <div class="col-sm-9 col-md-5">
+            <form action="" method="post" id="compose_message_form">
+              {% csrf_token %}
+              <fieldset>
+                <legend>{% trans "Compose message" %}</legend>
+                {{ form }}
+              </fieldset>
+              <br>
+              <input type="submit" name="send" value="{% trans "Send" %}" class="btn btn-danger" />
+
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- /.container -->
+    <div class="container">
+        <hr>
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Company 2013</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /.container -->
+{% endblock%}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block body %}
+<br/>
+<br/>
+<br/>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="row row-offcanvas-left row-offcanvas row-offcanvas-right">
+    {% block leftmenu %}
+    <div class="col-xs-0 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+        <div class="list-group">
+            <ul class="nav" id="side-menu">
+                {% if profile.user.username = user.username %}
+                <li>
+                    <a href="{% url 'userena_profile_detail' user.username %}"><i class="fa fa-info fa-fw"></i>My Personal Information</a>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="{% url 'activities:hosting' user.username %}"><i class="fa fa-discuss fa-fw"></i>My Activities</a>
+                </li>
+                <li>
+                    <a href="{% url 'activities:following' user.username %}"><i class="fa fa-follow fa-fw"></i>Following</a>
+                </li>
+            </ul>
+            <!-- /#side-menu -->
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    {% endblock %}
+     {% block lists %}
+     {% endblock %}
+            </div>
+    </div>
+</div>
+<hr>
+</div>
+
+<div class="container">
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; NexToU 2014</p>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'leftmenu.html' %}
+{% load i18n %}
+
+{% block meta %}
+{% endblock %}
+
+{% block title %}
+	mail | NexToU
+{% endblock %}
+
+{% block lists %}
+<div class="content">
+  <div class="row">
+	{% block profile_details %}
+    <div class="col-sm-9 col-md-5">
+      <div class="thumbnail">
+        <img class="mugshot" src="{{ profile.get_mugshot_url }}" alt="{% trans "Your mugshot" %}" />
+        <div class="caption">
+          <dl>
+            {% block profile_definition_list %}
+              {% if profile.user.get_full_name %}
+                <dt>{% trans "Name" %}</dt>
+                <dd>{{ profile.user.get_full_name }}</dd>
+              {% endif %}
+              {% if profile.talents %}
+                <dt>{% trans "Talents" %}
+                  {% for talent in profile.talents_set.all %}
+                    <dd>{{ talent }}
+                  {% endfor %}
+              {% endif %}
+              {% if profile.intro %}
+                <dt>{% trans "Intro" %}
+                <dd>{{ profile.intro }}
+              {% endif %}
+              {% if profile.resume %}
+                <dt>{% trans "Resume" %}
+                <dd>{{ profile.resume }}
+              {% endif %}
+              {% if profile.user.email and not hide_email %}
+                <dt>{% trans "Email" %}</dt>
+                <dd>{{ profile.user.email }}</dd>
+              {% endif %}
+            {% endblock %}
+          </dl>
+          {% if profile.user.username = user.username %}
+            <a href="{% url 'userena_profile_edit' user.username %}" class="btn btn-info" role="button">Edit profile</a>
+            <a href="{% url 'userena_password_change' user.username %}" class="btn btn-warning" role="button">{% trans "Change password" %}</a>
+            <a href="{% url 'userena_email_change' user.username %}" class="btn btn-danger" role="button">{% trans "Change email" %}</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endblock %}
+	</div>
+</div>
+	<!-- /.container -->
+
+{% endblock %}
+
