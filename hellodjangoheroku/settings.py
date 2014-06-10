@@ -54,6 +54,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+AUTHENTICATION_BACKENDS = (
+    'userena.backends.UserenaAuthenticationBackend',
+    'guardian.backends.ObjectPermissionBackend',
+    'django.contrib.auth.backends.ModelBackend', #this is default
+)
+
 #from accounts app models!
 AUTH_PROFILE_MODULE = 'accounts.VolunteerProfile'
 #django-guardian supports anonymous users object permissions
