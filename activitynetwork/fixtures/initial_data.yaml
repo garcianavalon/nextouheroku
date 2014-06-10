@@ -1,10 +1,8 @@
 - model: activitynetwork.category
-  pk: 2
   fields:
     name: Street performance
     description: Any kind of performance in the street
 - model: activitynetwork.category
-  pk: 1
   fields:
     name: Concert
     description: A concert in a closed place
