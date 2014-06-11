@@ -12,7 +12,7 @@ class CustomSignupForm(SignupForm):
                                 label=_("Username"),
                                 error_messages={'invalid': _('Username must contain only letters, numbers, dots and underscores.')})
     email = forms.EmailField(widget=forms.TextInput(attrs=dict(custom_attrs_dict,
-                                                               maxlength=254)),
+                                                               maxlength=75)),
                              label=_("Email address"))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs=custom_attrs_dict,
                                                            render_value=False),

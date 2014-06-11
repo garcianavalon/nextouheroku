@@ -3,7 +3,7 @@
 
 {% load static from staticfiles %}
 {% block title %}
-    {% trans "Followed activities | NexToU" %}
+    {% trans "Hosted activities | NexToU" %}
 {% endblock %}
 
 {% block meta %}
@@ -19,7 +19,7 @@
     {% for activity in activity_list %}
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                    <img class="mugshot" src="{{ activity.act_holder.volunteer_profile.get_mugshot_url }}" alt="{% trans "Your mugshot" %}" />
+                     <img class="mugshot" src="{{ user.volunteer_profile.get_mugshot_url }}" alt="{% trans "Your mugshot" %}" />
                     <h5>{{activity.act_holder}}</5>
                 <div class="caption">
                     <h3>{{ activity.name}}</h3>
@@ -30,11 +30,6 @@
                     {% for need in activity.need.all %}
                        <p>{{need }}</p>
                     {% endfor %}
-                    <form method="post">
-                    {% csrf_token %}
-                        <input name="activity_id" value="{{activity.id}}" type="hidden">
-                        <button class="btn btn-danger" type="submit" name="unfollow{{activity.id}}">Unfollow</button>
-                    </form>
                 </div>
             </div>
         </div>
