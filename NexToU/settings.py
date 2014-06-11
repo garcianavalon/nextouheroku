@@ -1,5 +1,5 @@
 """
-Django settings for hellodjangoheroku project.
+Django settings for NexToU project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -84,9 +84,9 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 #from email_settings import *
 
-ROOT_URLCONF = 'hellodjangoheroku.urls'
+ROOT_URLCONF = 'NexToU.urls'
 
-WSGI_APPLICATION = 'hellodjangoheroku.wsgi.application'
+WSGI_APPLICATION = 'NexToU.wsgi.application'
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
