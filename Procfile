@@ -1,1 +1,1 @@
-web: gunicorn hellodjangoheroku.wsgi
+web: gunicorn NexToU.wsgi
