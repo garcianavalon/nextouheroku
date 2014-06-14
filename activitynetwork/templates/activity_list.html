@@ -25,10 +25,10 @@
             <div class="col-lg-12">
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
-                        <div class="btn-group" data-toggle="buttons-radio">
-                            <a href="" data-toggle="tab" button type="button" class="btn btn-info">All</a>
+                        <div class="btn-group">
+                            <a href="{% url 'activities:list' %}"  button type="button" class="btn btn-info">All</a>
                         {% for category in category_list %}
-                            <a href="" data-toggle="tab" button type="button" class="btn btn-info">{{category}}</a>
+                            <a href="{% url 'activities:filtered_list' category=category.name %}"  button type="button" class="btn btn-info">{{category}}</a>
                         {% endfor %}
                         </div>
                     </ul>
