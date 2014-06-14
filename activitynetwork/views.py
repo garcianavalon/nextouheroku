@@ -33,9 +33,12 @@ class ActivityListView(ListView):
         return context
     def get_queryset(self):
         category = self.kwargs.get('category','All')#default value
+        print category
         if not category or category == 'All':
+            print 'all'
             return Activity.objects.all()
         else:
+            print 'filtering'
             category_object = Category.objects.get(name=category)
             return Activity.objects.filter(category=category_object)
     def post(self, request, *args, **kwargs):
