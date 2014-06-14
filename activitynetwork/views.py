@@ -32,6 +32,7 @@ class ActivityListView(ListView):
             context['f_activities'] = f_activities
         return context
     def get_queryset(self):
+        sdsad
         category = self.kwargs.get('category','All')#default value
         if not category or category == 'All':
             return Activity.objects.all()
