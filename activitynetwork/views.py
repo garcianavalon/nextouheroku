@@ -35,6 +35,7 @@ class ActivityListView(ListView):
         category = self.kwargs.get('category','All')#default value
         if not category or category == 'All':
             return Activity.objects.all()
+            return None
         else:
             category_object = Category.objects.get(name=category)
             return None
