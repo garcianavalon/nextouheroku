@@ -32,14 +32,12 @@ class ActivityListView(ListView):
             context['f_activities'] = f_activities
         return context
     def get_queryset(self):
-        sdsadsdsa
         category = self.kwargs.get('category','All')#default value
         if not category or category == 'All':
             return Activity.objects.all()
         else:
             category_object = Category.objects.get(name=category)
             return Activity.objects.filter(category=category_object)
-
     def post(self, request, *args, **kwargs):
         act_id = request.POST['activity_id']
         activity = Activity.objects.get(id=act_id)
